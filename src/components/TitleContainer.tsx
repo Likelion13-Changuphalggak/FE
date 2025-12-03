@@ -21,6 +21,7 @@ const TitleContainer: React.FC<TitleContainerProps> = ({
         alt="TitleContainer-logo"
         className={`${s.titleImage} ${s[motionType]}`}
         style={{ width, height }}
+        fetchPriority="high"
       />
       <p className={s.titleText}>{text}</p>
     </div>

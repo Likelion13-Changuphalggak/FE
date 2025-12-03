@@ -1,8 +1,7 @@
-import React from "react";
 import s from "../styles/Footer.module.scss";
 import LOGO from "../../../assets/images/logo/footer-logo.png";
 import QR from "../../../assets/images/main/qr-code.png";
-import PLUS from "../../../assets/images/plus-3d.png";
+import PLUS from "../../../assets/images/plus-3d.webp";
 
 const Footer = () => {
   return (

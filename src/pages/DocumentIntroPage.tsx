@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./styles/IntroPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import IntroLayout from "../components/IntroLayout";

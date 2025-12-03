@@ -1,4 +1,3 @@
-import React from "react";
 import s from "../styles/ScrollDown.module.scss";
 
 const ScrollDown = () => {

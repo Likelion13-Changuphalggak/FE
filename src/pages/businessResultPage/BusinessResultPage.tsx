@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import s from "../styles/BusinessResultPage.module.scss";
 import RANK1 from "../../assets/images/result/result-first.svg";

@@ -1,11 +1,11 @@
 import React from "react";
 import s from "./styles/FloatingMotion.module.scss";
 
-import IMG1 from "../assets/images/floating/floating1.png";
-import IMG2 from "../assets/images/floating/floating2.png";
-import IMG3 from "../assets/images/floating/floating3.png";
-import IMG4 from "../assets/images/floating/floating4.png";
-import CHAR from "../assets/images/floating/character.png";
+import IMG1 from "../assets/images/floating/floating1.webp";
+import IMG2 from "../assets/images/floating/floating2.webp";
+import IMG3 from "../assets/images/floating/floating3.webp";
+import IMG4 from "../assets/images/floating/floating4.webp";
+import CHAR from "../assets/images/floating/character.webp";
 
 interface FloatingProps {
   mirrored: boolean;
@@ -22,6 +22,7 @@ const FloatingMotion: React.FC<FloatingProps> = ({ mirrored = false }) => {
           src={IMG1}
           alt="floating1"
           className={`${s.floatingImage} ${s.img1}`}
+          fetchPriority="high"
         />
         <img
           src={IMG2}

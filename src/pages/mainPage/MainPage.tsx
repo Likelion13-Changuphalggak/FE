@@ -11,10 +11,10 @@ import ScrollTopButton from "../../components/ScrollTopButton";
 import TITLE from "../../assets/images/logo/first-logo.svg";
 import LOGO1 from "../../assets/images/logo/scroll-logo1.png";
 import LOGO2 from "../../assets/images/logo/scroll-logo2.png";
-import DOCUMENT from "../../assets/images/main/main-document.png";
-import MAP from "../../assets/images/main/main-map.png";
-import REPORT from "../../assets/images/main/main-report.png";
-import BUSINESS from "../../assets/images/main/main-business.png";
+import DOCUMENT from "../../assets/images/main/main-document.webp";
+import MAP from "../../assets/images/main/main-map.webp";
+import REPORT from "../../assets/images/main/main-report.webp";
+import BUSINESS from "../../assets/images/main/main-business.webp";
 import CHAR from "../../assets/images/character-2d.svg";
 import LINE1 from "../../assets/images/main/line1.svg";
 import LINE2 from "../../assets/images/main/line2.svg";
@@ -57,7 +57,13 @@ const MainPage = () => {
         {/* 레포트 */}
         <FadeUp>
           <section className={s.section1}>
-            <img src={REPORT} alt="main-report" style={{ width: "24.74vw" }} />
+            <img
+              src={REPORT}
+              alt="main-report"
+              style={{ width: "24.74vw" }}
+              loading="lazy"
+              decoding="async"
+            />
             <ScrollTextBox
               title={`나의 창업에 꼭 필요한 정보와 전략, \n매주 맞춤 레포트로 전해 드립니다.`}
               subTitle="매주 도착하는 나의 창업 레포트"
@@ -66,7 +72,7 @@ const MainPage = () => {
               marginTop="6.67vw"
             />
           </section>
-          <img src={LINE1} alt="line1" className={s.line1} />
+          <img src={LINE1} alt="line1" className={s.line1} loading="lazy" />
         </FadeUp>
         {/* 지도, 지원사업 */}
         <FadeUp>
@@ -85,19 +91,29 @@ const MainPage = () => {
                   src={LOGO2}
                   alt="scroll-logo2"
                   style={{ width: "22.40vw", marginTop: "21.25vw" }}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <p>{`지원 사업 선정,\n지역 경제 활성화의 첫 걸음입니다.`}</p>
               </div>
             </div>
             <div className={s.imgTwo}>
-              <img src={MAP} alt="main-map" style={{ width: "24.74vw" }} />
+              <img
+                src={MAP}
+                alt="main-map"
+                style={{ width: "24.74vw" }}
+                loading="lazy"
+                decoding="async"
+              />
               <img
                 src={BUSINESS}
                 alt="main-business"
                 style={{ width: "24.74vw" }}
+                loading="lazy"
+                decoding="async"
               />
             </div>
-            <img src={LINE2} alt="line2" className={s.line2} />
+            <img src={LINE2} alt="line2" className={s.line2} loading="lazy" />
           </section>
         </FadeUp>
         <FadeUp>
@@ -108,7 +124,12 @@ const MainPage = () => {
                 사업계획서 첨삭해 드려요
               </p>
             </ReportInBox>
-            <img src={CHAR} alt="character-2d" style={{ width: "6.5vw" }} />
+            <img
+              src={CHAR}
+              alt="character-2d"
+              style={{ width: "6.5vw" }}
+              loading="lazy"
+            />
           </div>
 
           {/* 서류(선정될각) */}
@@ -117,6 +138,8 @@ const MainPage = () => {
               src={DOCUMENT}
               alt="main-document"
               style={{ width: "42.08vw" }}
+              loading="lazy"
+              decoding="async"
             />
             <ScrollTextBox
               title={`사업계획서는 스마트하게,\n질의응답은 철저하게.`}

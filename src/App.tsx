@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import {
   RouterProvider,
   createBrowserRouter,
@@ -5,15 +6,19 @@ import {
 } from "react-router-dom";
 import "./styles/global.scss";
 import Layout from "./components/Layout";
-import MainPage from "./pages/mainPage/MainPage";
-import FormPage from "./pages/formPage/FormPage";
-import ReportPage from "./pages/reportPage/ReportPage";
-import BusinessPage from "./pages/businessPage/BusinessPage";
-import DocumentPage from "./pages/documentPage/DocumentPage";
-import BusinessResultPage from "./pages/businessResultPage/BusinessResultPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import FormIntroPage from "./pages/FormIntroPage";
-import DocumentIntroPage from "./pages/DocumentIntroPage";
+import LoadingSpinner from "./components/LoadingSpinner";
+
+const MainPage = lazy(() => import("./pages/mainPage/MainPage"));
+const FormPage = lazy(() => import("./pages/formPage/FormPage"));
+const ReportPage = lazy(() => import("./pages/reportPage/ReportPage"));
+const BusinessPage = lazy(() => import("./pages/businessPage/BusinessPage"));
+const BusinessResultPage = lazy(
+  () => import("./pages/businessResultPage/BusinessResultPage")
+);
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const FormIntroPage = lazy(() => import("./pages/FormIntroPage"));
+const DocumentIntroPage = lazy(() => import("./pages/DocumentIntroPage"));
+const DocumentPage = lazy(() => import("./pages/documentPage/DocumentPage"));
 
 const router = createBrowserRouter([
   {
@@ -24,15 +29,78 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path: "main", element: <MainPage /> },
-      { path: "form-intro", element: <FormIntroPage /> },
-      { path: "form", element: <FormPage /> },
-      { path: "report", element: <ReportPage /> },
-      { path: "business", element: <BusinessPage /> },
-      { path: "business/result", element: <BusinessResultPage /> },
-      { path: "document-intro", element: <DocumentIntroPage /> },
-      { path: "document", element: <DocumentPage /> },
-      { path: "*", element: <NotFoundPage /> }, // 404 처리
+      {
+        path: "main",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <MainPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "form-intro",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <FormIntroPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "form",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <FormPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "report",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ReportPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "business",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <BusinessPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "business/result",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <BusinessResultPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "document-intro",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <DocumentIntroPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "document",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <DocumentPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "*",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <NotFoundPage />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import {
   RouterProvider,
   createBrowserRouter,
@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import "./styles/global.scss";
 import Layout from "./components/Layout";
-import LoadingSpinner from "./components/LoadingSpinner";
 
 const MainPage = lazy(() => import("./pages/mainPage/MainPage"));
 const FormPage = lazy(() => import("./pages/formPage/FormPage"));
@@ -31,75 +30,39 @@ const router = createBrowserRouter([
     children: [
       {
         path: "main",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <MainPage />
-          </Suspense>
-        ),
+        element: <MainPage />,
       },
       {
         path: "form-intro",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <FormIntroPage />
-          </Suspense>
-        ),
+        element: <FormIntroPage />,
       },
       {
         path: "form",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <FormPage />
-          </Suspense>
-        ),
+        element: <FormPage />,
       },
       {
         path: "report",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <ReportPage />
-          </Suspense>
-        ),
+        element: <ReportPage />,
       },
       {
         path: "business",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <BusinessPage />
-          </Suspense>
-        ),
+        element: <BusinessPage />,
       },
       {
         path: "business/result",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <BusinessResultPage />
-          </Suspense>
-        ),
+        element: <BusinessResultPage />,
       },
       {
         path: "document-intro",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <DocumentIntroPage />
-          </Suspense>
-        ),
+        element: <DocumentIntroPage />,
       },
       {
         path: "document",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <DocumentPage />
-          </Suspense>
-        ),
+        element: <DocumentPage />,
       },
       {
         path: "*",
-        element: (
-          <Suspense fallback={<LoadingSpinner />}>
-            <NotFoundPage />
-          </Suspense>
-        ),
+        element: <NotFoundPage />,
       },
     ],
   },

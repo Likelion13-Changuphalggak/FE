@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import s from "./Document.module.scss";
 import IconButton from "../../../components/IconButton";
 import PDF from "../../../assets/images/icon/download-icon.svg";

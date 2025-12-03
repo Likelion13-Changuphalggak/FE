@@ -1,10 +1,4 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useMemo,
-  useCallback,
-} from "react";
+import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import s from "../styles/DocumentPage.module.scss";
 import DocumentItem from "./components/DocumentItem";
 import { revisingTitles } from "../../data/revisingTitleData";

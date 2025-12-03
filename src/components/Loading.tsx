@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./styles/Loading.module.scss";
 import SvgLogo from "./SvgLogo";
 import FloatingMotion from "./FloatingMotion";

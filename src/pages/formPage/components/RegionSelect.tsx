@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import s from "./InfoForm.module.scss";
 import { SIGUNGU_MAP } from "../../../data/formData";
 
